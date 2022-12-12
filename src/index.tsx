@@ -19,7 +19,7 @@ const Title = () => {
 
 const Content = () => {
     return (
-        <React.Fragment>
+        <>
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Voluptatem aliquid repudiandae, quo iure, necessitatibus
@@ -33,16 +33,16 @@ const Content = () => {
                 consequuntur neque hic est error commodi eligendi ea
                 perspiciatis amet officiis harum.
             </p>
-        </React.Fragment>
+        </>
     )
 }
 
 const App = () => {
     return (
-        <React.Fragment>
+        <>
             <Title />
             <Content />
-        </React.Fragment>
+        </>
     )
 }
 
@@ -63,7 +63,7 @@ const App = () => {
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
-    <React.StrictMode>
+    <>
         <App />
-    </React.StrictMode>
+    </>
 )
