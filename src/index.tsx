@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom/client'
 
 type TitleProps = {
     title: string
-    text: string
+    text?: string
 }
 
-const Title = (props: TitleProps) => {
+const Title = ({ title, text = 'TEST' }: TitleProps) => {
     return (
         <h1>
-            {props.text} {props.title}
+            {text} {title}
         </h1>
     )
 }
@@ -39,7 +39,7 @@ const App = () => {
         <>
             <Title text="Hello" title="React" />
             <Title text="Hi" title="About" />
-            <Title text="Bye-bye" title="Bla-bla" />
+            <Title title="Bla-bla" />
 
             <Content />
         </>
