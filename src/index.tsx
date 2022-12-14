@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { Content } from './Content'
+import Content, { test } from './Content'
 
 type TitleProps = {
     title: string
