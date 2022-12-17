@@ -1,8 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import Content from './header'
 
 const App = () => {
-    return <></>
+    return (
+        <>
+            <Content />
+        </>
+    )
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
