@@ -3,7 +3,11 @@ import Home from 'pages/Home/Home'
 type Props = {}
 const Main = (props: Props) => {
     return (
-        <main style={{ padding: '40px 0' }}>
+        <main
+            style={{
+                padding: '40px 0',
+            }}
+        >
             <Container maxWidth="lg">
                 <Home />
             </Container>
