@@ -4,7 +4,11 @@ type Props = {}
 const Home = (props: Props) => {
     return (
         <>
-            <Typography variant="h4" align="center">
+            <Typography
+                variant="h4"
+                align="center"
+                sx={{ marginBottom: '40px' }}
+            >
                 List of Products
             </Typography>
             <ProductList />
