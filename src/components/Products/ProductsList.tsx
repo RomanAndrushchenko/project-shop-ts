@@ -2,6 +2,7 @@ import { Grid } from '@mui/material'
 import ProductsListItem from './ProductsListItem'
 import productsArray from './productsArray'
 type ProductsProps = {
+    id: number
     title: string
     desc: string
     type: string
@@ -16,6 +17,7 @@ const ProductsList = (props: Props) => {
             <Grid container direction="row" alignItems="center" spacing={4}>
                 {productsArray.map(
                     ({
+                        id,
                         title,
                         desc,
                         type,
@@ -23,7 +25,7 @@ const ProductsList = (props: Props) => {
                         price,
                         image,
                     }: ProductsProps) => (
-                        <Grid item xs={12} sm={6} md={4}>
+                        <Grid item xs={12} sm={6} md={4} key={id}>
                             <ProductsListItem
                                 title={title}
                                 desc={desc}
