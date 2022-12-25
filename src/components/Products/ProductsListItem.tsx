@@ -47,7 +47,7 @@ const ProductsListItem = ({
                 <div className="product-features">
                     <span>Capacity:</span> {capacity}
                 </div>
-                <div className="product-price">{price}</div>
+                <div className="product-price">{price}$</div>
 
                 <div className="product-quantity">
                     <Button
