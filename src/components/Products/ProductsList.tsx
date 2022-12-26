@@ -10,8 +10,11 @@ type ProductsProps = {
     price: number
     image: string
 }
-type Props = {}
-const ProductsList = (props: Props) => {
+type Props = {
+    addProductToCart: (total: number, price: number) => void
+}
+
+const ProductsList = ({ addProductToCart }: Props) => {
     return (
         <>
             <Grid container direction="row" alignItems="center" spacing={4}>
@@ -33,6 +36,7 @@ const ProductsList = (props: Props) => {
                                 capacity={capacity}
                                 price={price}
                                 image={image}
+                                addProductToCart={addProductToCart}
                             />
                         </Grid>
                     )

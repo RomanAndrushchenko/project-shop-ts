@@ -24,10 +24,8 @@ const App = () => {
         <StyledEngineProvider injectFirst>
             <CssBaseline />
             <Header cartData={cartData} />
-            <button onClick={() => addProductToCart(5, 500)}>
-                add to cart
-            </button>
-            <Main />
+
+            <Main addProductToCart={addProductToCart} />
         </StyledEngineProvider>
     )
 }
