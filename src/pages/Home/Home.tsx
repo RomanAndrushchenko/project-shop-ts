@@ -1,7 +1,7 @@
 import { Typography } from '@mui/material'
 import ProductList from 'components/Products/ProductsList'
 type Props = {
-    addProductToCart: (total: number, price: number) => void
+    addProductToCart: (id: number, count: number) => void
 }
 const Home = ({ addProductToCart }: Props) => {
     return (
