@@ -25,7 +25,16 @@ const CartHeader = ({
                     </div>
                 ))}
             </div>
-            <div>Total: {}$</div>
+            <div>
+                Total:{' '}
+                {Object.keys(productsInCart).map((productId) => (
+                    <div key={productId}>
+                        {productsObject[parseInt(productId)].price}:
+                        {productsInCart[parseInt(productId)]}
+                    </div>
+                ))}{' '}
+                $
+            </div>
         </div>
     )
 }
