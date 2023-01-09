@@ -7,8 +7,9 @@ import ShippingPage from 'pages/ShippingPage/ShippingPage'
 import { Route, Routes } from 'react-router-dom'
 type Props = {
     addProductToCart: (id: number, count: number) => void
+    productsInCart: { [id: number]: number }
 }
-const Main = ({ addProductToCart }: Props) => {
+const Main = ({ addProductToCart, productsInCart }: Props) => {
     return (
         <main
             style={{
@@ -21,7 +22,10 @@ const Main = ({ addProductToCart }: Props) => {
                         path="/"
                         element={<Home addProductToCart={addProductToCart} />}
                     />
-                    <Route path="cart" element={<CartPage />} />
+                    <Route
+                        path="cart"
+                        element={<CartPage productsInCart={productsInCart} />}
+                    />
                     <Route path="shipping" element={<ShippingPage />} />
                     <Route path="about" element={<AboutPage />} />
                     <Route path="payment" element={<PaymentPage />} />
