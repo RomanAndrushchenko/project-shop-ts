@@ -5,8 +5,9 @@ import CartProductsListitemextended from 'components/CartProductsList/CartProduc
 
 type Props = {
     productsInCart: { [id: number]: number }
+    removeProductFromCart: (id: number) => void
 }
-const CartPage = ({ productsInCart }: Props) => {
+const CartPage = ({ productsInCart, removeProductFromCart }: Props) => {
     return (
         <div>
             <Typography variant="h4" style={{ margin: '30px 0' }}>
@@ -16,6 +17,7 @@ const CartPage = ({ productsInCart }: Props) => {
                 <CartProductsList
                     productsInCart={productsInCart}
                     CartItem={CartProductsListitemextended}
+                    removeProductFromCart={removeProductFromCart}
                 />
             </Grid>
             <CartTotal productsInCart={productsInCart} />

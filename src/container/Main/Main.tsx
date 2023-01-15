@@ -7,9 +7,14 @@ import ShippingPage from 'pages/ShippingPage/ShippingPage'
 import { Route, Routes } from 'react-router-dom'
 type Props = {
     addProductToCart: (id: number, count: number) => void
+    removeProductFromCart: (id: number) => void
     productsInCart: { [id: number]: number }
 }
-const Main = ({ addProductToCart, productsInCart }: Props) => {
+const Main = ({
+    addProductToCart,
+    productsInCart,
+    removeProductFromCart,
+}: Props) => {
     return (
         <main
             style={{
@@ -24,7 +29,12 @@ const Main = ({ addProductToCart, productsInCart }: Props) => {
                     />
                     <Route
                         path="cart"
-                        element={<CartPage productsInCart={productsInCart} />}
+                        element={
+                            <CartPage
+                                productsInCart={productsInCart}
+                                removeProductFromCart={removeProductFromCart}
+                            />
+                        }
                     />
                     <Route path="shipping" element={<ShippingPage />} />
                     <Route path="about" element={<AboutPage />} />
