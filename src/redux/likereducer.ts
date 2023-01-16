@@ -1,19 +1,26 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 type LikeProductsState = {
-    [id:number]:boolean
+    [id: number]: boolean
 }
-const initialState:LikeProductsState = {
-    1:true,
-    4:true
+const initialState: LikeProductsState = {
+    1: true,
+    4: true,
 }
 
 export const likeSlice = createSlice({
-    name:"like",
+    name: 'like',
     initialState,
-    reducers:{
-        
-    }
-  })
-
-  export default likeSlice.reducer
+    reducers: {
+        addLike: (prevState, action) => ({
+            ...prevState,
+            [action.payload]: true,
+        }),
+        removeLike: (prevState, action) => ({
+            ...prevState,
+            [action.payload]: false,
+        }),
+    },
+})
+export const{addLike,removeLike}=likeSlice.actions
+export default likeSlice.reducer
