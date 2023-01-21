@@ -30,12 +30,27 @@ const CheckoutPage = (props: Props) => {
 
     const orderSend = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        axios.post('')
+        axios
+            .post(
+                'https://my-json-server.typicode.com/kznkv-skillup/server/orders',
+                {
+                    name: orderData.name,
+                    address: orderData.address,
+                }
+            )
+            .then((res) => res.data)
+            .then(({ name, address }) => {
+                setOrderData({
+                    name,
+                    address,
+                })
+                setIsOrderSend(true)
+            })
     }
 
     const renderForm = () => {
         return (
-            <form>
+            <form onSubmit={orderSend}>
                 <div>
                     <input
                         type="text"
