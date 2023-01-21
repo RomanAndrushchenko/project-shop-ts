@@ -30,7 +30,7 @@ const CheckoutPage = (props: Props) => {
 
     const orderSend = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        axios
+        axios.post('')
     }
 
     const renderForm = () => {
